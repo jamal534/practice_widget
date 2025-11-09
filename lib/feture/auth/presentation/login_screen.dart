@@ -111,11 +111,11 @@ class LoginScreen extends StatelessWidget {
                 CustomButton(
                   text: "LogIn",
                   onPressed: () async {
-                    Get.toNamed(AppRoute.profileScreen);
-                    // if (loginFormKey.currentState!.validate()) {
-                    //   await loginController.logIn();
-                    //   // Get.toNamed(AppRoute.navBar);
-                    // }
+                    // Get.toNamed(AppRoute.profileScreen);
+                    if (loginFormKey.currentState!.validate()) {
+                      await loginController.logIn();
+                      // Get.toNamed(AppRoute.navBar);
+                    }
                   },
                 ),
               ),

@@ -1,11 +1,12 @@
 class AppUrls {
-  static const String _baseUrl = 'https://salahmarhaba.com/api/v1';
+  // static const String _baseUrl = 'https://salahmarhaba.com/api/v1';
+  static const String _baseUrl = 'https://lunatix-backend.vercel.app/api/v1';
   static const String registerUrl = '$_baseUrl/users/create';
   static const String signup_verify_otp =
       '$_baseUrl/users/signup-verification';
 
+  // static const String loginUrl = '$_baseUrl/auth/login';
   static const String loginUrl = '$_baseUrl/auth/login';
-
   static const String auth_login = '$_baseUrl/auth/auth-login';
 
   static const String send_otp = '$_baseUrl/auth/send-otp';

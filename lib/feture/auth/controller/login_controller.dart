@@ -1,11 +1,9 @@
-import 'dart:convert';
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:parctice_widget/core/approute/approute.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../../core/helper/sharded_preference_helper.dart';
 import '../../../core/service_class/network_caller/model/network_response.dart';
 import '../../../core/service_class/network_caller/repository/network_caller.dart';
 import '../../../core/utils/app_urls.dart';
@@ -15,7 +13,6 @@ import '../../../core/utils/app_urls.dart';
 class LoginController extends GetxController {
   TextEditingController emailText = TextEditingController();
   TextEditingController passText = TextEditingController();
-  SharedPreferencesHelper prefs = SharedPreferencesHelper();
   RxBool isLoading = false.obs;
 
 
@@ -64,6 +61,7 @@ class LoginController extends GetxController {
         final jwt = JWT.decode(token);
         String myUserId=jwt.payload['id'];
         debugPrint("My user ID="+myUserId);
+        debugPrint("Login Token $token",);
 
 
         final SharedPreferences sp = await SharedPreferences.getInstance();
