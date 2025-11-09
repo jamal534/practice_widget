@@ -7,6 +7,5 @@ void main() async {
 
   SharedPreferences sp = await SharedPreferences.getInstance();
   String token = sp.getString('userToken') ?? "";
-
   runApp(MyApp(token));
 }
